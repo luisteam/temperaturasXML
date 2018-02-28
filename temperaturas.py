@@ -1,10 +1,13 @@
 from lxml import etree
 from urllib.request import urlopen
-from temperaturas1 import localidad,nombrelocal,listado
+from temperaturas1 import localidad,nombrelocal,listado,extracodigo
 
 contador=0
 
-cp=input("Dime el Codido Postal de la localidad que desee: ")
+nombre=input("Dime el municipio que desee: ")
+
+cp=extracodigo(nombre)
+
 url=('http://www.aemet.es/xml/municipios/localidad_%s.xml' % (cp))
 
 for city in listado():
